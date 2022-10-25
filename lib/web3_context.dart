@@ -1,3 +1,5 @@
+library web3_context;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:web3_context/models/chain/chain_model.dart';
