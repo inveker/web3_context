@@ -8,6 +8,23 @@ import 'package:web3_context/bloc/wallet_external_updates/wallet_external_update
 import 'package:web3_context/bloc/walletconnect_provider/walletconnect_provider_bloc.dart';
 
 class WalletConnectionBlocListeners {
+  static BlocListener<WalletConnectionBloc, WalletConnectionState> walletConnect() {
+    return BlocListener<WalletConnectionBloc, WalletConnectionState>(
+      listenWhen: (p, n) => p.hasWalletConnection == false && n.hasWalletConnection == true,
+      listener: (context, state) async {
+        final browserExtensionProviderBloc = context.read<BrowserExtensionProviderBloc>();
+        final walletConnectProviderBloc = context.read<WalletConnectProviderBloc>();
+
+        final isBrowserExtensionConnection = browserExtensionProviderBloc.state.isConnected;
+        final isWalletConnectConnection = walletConnectProviderBloc.state.isConnected;
+
+        if (isBrowserExtensionConnection && isWalletConnectConnection) {
+          throw Exception('WalletConnectionBlocListener walletConnect: logout previous connection, before create new connection');
+        }
+      },
+    );
+  }
+
   static BlocListener<WalletConnectionBloc, WalletConnectionState> logout() {
     return BlocListener<WalletConnectionBloc, WalletConnectionState>(
       listenWhen: (p, n) => p.hasWalletConnection == true && n.hasWalletConnection == false,
@@ -24,11 +41,11 @@ class WalletConnectionBlocListeners {
         rpcBloc.add(RpcEvent.createFromUrl(chainBloc.state.currentChain.rpcUrl));
         walletExternalUpdatesBloc.add(WalletExternalUpdatesEvent.reset());
 
-        if(browserExtensionProviderBloc.state.isConnected) {
+        if (browserExtensionProviderBloc.state.isConnected) {
           browserExtensionProviderBloc.add(BrowserExtensionProviderEvent.reset());
         }
 
-        if(walletConnectProviderBloc.state.isConnected) {
+        if (walletConnectProviderBloc.state.isConnected) {
           walletConnectProviderBloc.add(WalletConnectProviderEvent.reset());
         }
       },

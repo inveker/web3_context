@@ -19,50 +19,50 @@ mixin _$ChainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
-    required TResult Function(int chainId) switchChainById,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
+    required TResult Function(int chainId) setChainById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ChainModel chain)? switchChain,
-    TResult? Function(int chainId)? switchChainById,
     TResult? Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult? Function(int chainId)? setChainById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
-    TResult Function(int chainId)? switchChainById,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult Function(int chainId)? setChainById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ChainSwitchChainEvent value) switchChain,
-    required TResult Function(ChainSwitchChainByIdEvent value) switchChainById,
     required TResult Function(ChainSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
+    required TResult Function(ChainSetChainByIdEvent value) setChainById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChainSwitchChainEvent value)? switchChain,
-    TResult? Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult? Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult? Function(ChainSetChainByIdEvent value)? setChainById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChainSwitchChainEvent value)? switchChain,
-    TResult Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult Function(ChainSetChainByIdEvent value)? setChainById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,9 +162,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
-    required TResult Function(int chainId) switchChainById,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
+    required TResult Function(int chainId) setChainById,
   }) {
     return switchChain(chain);
   }
@@ -173,9 +173,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ChainModel chain)? switchChain,
-    TResult? Function(int chainId)? switchChainById,
     TResult? Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult? Function(int chainId)? setChainById,
   }) {
     return switchChain?.call(chain);
   }
@@ -184,9 +184,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
-    TResult Function(int chainId)? switchChainById,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult Function(int chainId)? setChainById,
     required TResult orElse(),
   }) {
     if (switchChain != null) {
@@ -199,9 +199,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ChainSwitchChainEvent value) switchChain,
-    required TResult Function(ChainSwitchChainByIdEvent value) switchChainById,
     required TResult Function(ChainSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
+    required TResult Function(ChainSetChainByIdEvent value) setChainById,
   }) {
     return switchChain(this);
   }
@@ -210,9 +210,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChainSwitchChainEvent value)? switchChain,
-    TResult? Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult? Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult? Function(ChainSetChainByIdEvent value)? setChainById,
   }) {
     return switchChain?.call(this);
   }
@@ -221,9 +221,9 @@ class _$ChainSwitchChainEvent implements ChainSwitchChainEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChainSwitchChainEvent value)? switchChain,
-    TResult Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult Function(ChainSetChainByIdEvent value)? setChainById,
     required TResult orElse(),
   }) {
     if (switchChain != null) {
@@ -241,154 +241,6 @@ abstract class ChainSwitchChainEvent implements ChainEvent {
   @JsonKey(ignore: true)
   _$$ChainSwitchChainEventCopyWith<_$ChainSwitchChainEvent> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ChainSwitchChainByIdEventCopyWith<$Res> {
-  factory _$$ChainSwitchChainByIdEventCopyWith(
-          _$ChainSwitchChainByIdEvent value,
-          $Res Function(_$ChainSwitchChainByIdEvent) then) =
-      __$$ChainSwitchChainByIdEventCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int chainId});
-}
-
-/// @nodoc
-class __$$ChainSwitchChainByIdEventCopyWithImpl<$Res>
-    extends _$ChainEventCopyWithImpl<$Res, _$ChainSwitchChainByIdEvent>
-    implements _$$ChainSwitchChainByIdEventCopyWith<$Res> {
-  __$$ChainSwitchChainByIdEventCopyWithImpl(_$ChainSwitchChainByIdEvent _value,
-      $Res Function(_$ChainSwitchChainByIdEvent) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? chainId = null,
-  }) {
-    return _then(_$ChainSwitchChainByIdEvent(
-      null == chainId
-          ? _value.chainId
-          : chainId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ChainSwitchChainByIdEvent implements ChainSwitchChainByIdEvent {
-  _$ChainSwitchChainByIdEvent(this.chainId);
-
-  @override
-  final int chainId;
-
-  @override
-  String toString() {
-    return 'ChainEvent.switchChainById(chainId: $chainId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ChainSwitchChainByIdEvent &&
-            (identical(other.chainId, chainId) || other.chainId == chainId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, chainId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ChainSwitchChainByIdEventCopyWith<_$ChainSwitchChainByIdEvent>
-      get copyWith => __$$ChainSwitchChainByIdEventCopyWithImpl<
-          _$ChainSwitchChainByIdEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ChainModel chain) switchChain,
-    required TResult Function(int chainId) switchChainById,
-    required TResult Function(SwitchChainStrategy? switchChainStrategy)
-        setSwitchChainStrategy,
-  }) {
-    return switchChainById(chainId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ChainModel chain)? switchChain,
-    TResult? Function(int chainId)? switchChainById,
-    TResult? Function(SwitchChainStrategy? switchChainStrategy)?
-        setSwitchChainStrategy,
-  }) {
-    return switchChainById?.call(chainId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ChainModel chain)? switchChain,
-    TResult Function(int chainId)? switchChainById,
-    TResult Function(SwitchChainStrategy? switchChainStrategy)?
-        setSwitchChainStrategy,
-    required TResult orElse(),
-  }) {
-    if (switchChainById != null) {
-      return switchChainById(chainId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChainSwitchChainEvent value) switchChain,
-    required TResult Function(ChainSwitchChainByIdEvent value) switchChainById,
-    required TResult Function(ChainSetSwitchChainStrategyEvent value)
-        setSwitchChainStrategy,
-  }) {
-    return switchChainById(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ChainSwitchChainEvent value)? switchChain,
-    TResult? Function(ChainSwitchChainByIdEvent value)? switchChainById,
-    TResult? Function(ChainSetSwitchChainStrategyEvent value)?
-        setSwitchChainStrategy,
-  }) {
-    return switchChainById?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChainSwitchChainEvent value)? switchChain,
-    TResult Function(ChainSwitchChainByIdEvent value)? switchChainById,
-    TResult Function(ChainSetSwitchChainStrategyEvent value)?
-        setSwitchChainStrategy,
-    required TResult orElse(),
-  }) {
-    if (switchChainById != null) {
-      return switchChainById(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChainSwitchChainByIdEvent implements ChainEvent {
-  factory ChainSwitchChainByIdEvent(final int chainId) =
-      _$ChainSwitchChainByIdEvent;
-
-  int get chainId;
-  @JsonKey(ignore: true)
-  _$$ChainSwitchChainByIdEventCopyWith<_$ChainSwitchChainByIdEvent>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -462,9 +314,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
-    required TResult Function(int chainId) switchChainById,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
+    required TResult Function(int chainId) setChainById,
   }) {
     return setSwitchChainStrategy(switchChainStrategy);
   }
@@ -473,9 +325,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(ChainModel chain)? switchChain,
-    TResult? Function(int chainId)? switchChainById,
     TResult? Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult? Function(int chainId)? setChainById,
   }) {
     return setSwitchChainStrategy?.call(switchChainStrategy);
   }
@@ -484,9 +336,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
-    TResult Function(int chainId)? switchChainById,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
+    TResult Function(int chainId)? setChainById,
     required TResult orElse(),
   }) {
     if (setSwitchChainStrategy != null) {
@@ -499,9 +351,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ChainSwitchChainEvent value) switchChain,
-    required TResult Function(ChainSwitchChainByIdEvent value) switchChainById,
     required TResult Function(ChainSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
+    required TResult Function(ChainSetChainByIdEvent value) setChainById,
   }) {
     return setSwitchChainStrategy(this);
   }
@@ -510,9 +362,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChainSwitchChainEvent value)? switchChain,
-    TResult? Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult? Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult? Function(ChainSetChainByIdEvent value)? setChainById,
   }) {
     return setSwitchChainStrategy?.call(this);
   }
@@ -521,9 +373,9 @@ class _$ChainSetSwitchChainStrategyEvent
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChainSwitchChainEvent value)? switchChain,
-    TResult Function(ChainSwitchChainByIdEvent value)? switchChainById,
     TResult Function(ChainSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
+    TResult Function(ChainSetChainByIdEvent value)? setChainById,
     required TResult orElse(),
   }) {
     if (setSwitchChainStrategy != null) {
@@ -543,6 +395,152 @@ abstract class ChainSetSwitchChainStrategyEvent implements ChainEvent {
   _$$ChainSetSwitchChainStrategyEventCopyWith<
           _$ChainSetSwitchChainStrategyEvent>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChainSetChainByIdEventCopyWith<$Res> {
+  factory _$$ChainSetChainByIdEventCopyWith(_$ChainSetChainByIdEvent value,
+          $Res Function(_$ChainSetChainByIdEvent) then) =
+      __$$ChainSetChainByIdEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int chainId});
+}
+
+/// @nodoc
+class __$$ChainSetChainByIdEventCopyWithImpl<$Res>
+    extends _$ChainEventCopyWithImpl<$Res, _$ChainSetChainByIdEvent>
+    implements _$$ChainSetChainByIdEventCopyWith<$Res> {
+  __$$ChainSetChainByIdEventCopyWithImpl(_$ChainSetChainByIdEvent _value,
+      $Res Function(_$ChainSetChainByIdEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chainId = null,
+  }) {
+    return _then(_$ChainSetChainByIdEvent(
+      null == chainId
+          ? _value.chainId
+          : chainId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChainSetChainByIdEvent implements ChainSetChainByIdEvent {
+  _$ChainSetChainByIdEvent(this.chainId);
+
+  @override
+  final int chainId;
+
+  @override
+  String toString() {
+    return 'ChainEvent.setChainById(chainId: $chainId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChainSetChainByIdEvent &&
+            (identical(other.chainId, chainId) || other.chainId == chainId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, chainId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChainSetChainByIdEventCopyWith<_$ChainSetChainByIdEvent> get copyWith =>
+      __$$ChainSetChainByIdEventCopyWithImpl<_$ChainSetChainByIdEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ChainModel chain) switchChain,
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
+        setSwitchChainStrategy,
+    required TResult Function(int chainId) setChainById,
+  }) {
+    return setChainById(chainId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChainModel chain)? switchChain,
+    TResult? Function(SwitchChainStrategy? switchChainStrategy)?
+        setSwitchChainStrategy,
+    TResult? Function(int chainId)? setChainById,
+  }) {
+    return setChainById?.call(chainId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChainModel chain)? switchChain,
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
+        setSwitchChainStrategy,
+    TResult Function(int chainId)? setChainById,
+    required TResult orElse(),
+  }) {
+    if (setChainById != null) {
+      return setChainById(chainId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChainSwitchChainEvent value) switchChain,
+    required TResult Function(ChainSetSwitchChainStrategyEvent value)
+        setSwitchChainStrategy,
+    required TResult Function(ChainSetChainByIdEvent value) setChainById,
+  }) {
+    return setChainById(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChainSwitchChainEvent value)? switchChain,
+    TResult? Function(ChainSetSwitchChainStrategyEvent value)?
+        setSwitchChainStrategy,
+    TResult? Function(ChainSetChainByIdEvent value)? setChainById,
+  }) {
+    return setChainById?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChainSwitchChainEvent value)? switchChain,
+    TResult Function(ChainSetSwitchChainStrategyEvent value)?
+        setSwitchChainStrategy,
+    TResult Function(ChainSetChainByIdEvent value)? setChainById,
+    required TResult orElse(),
+  }) {
+    if (setChainById != null) {
+      return setChainById(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChainSetChainByIdEvent implements ChainEvent {
+  factory ChainSetChainByIdEvent(final int chainId) = _$ChainSetChainByIdEvent;
+
+  int get chainId;
+  @JsonKey(ignore: true)
+  _$$ChainSetChainByIdEventCopyWith<_$ChainSetChainByIdEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

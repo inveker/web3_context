@@ -4,13 +4,13 @@ import 'package:web3_context/bloc/wallet_external_updates/wallet_external_update
 
 class WalletExternalUpdatesHandler extends StatefulWidget {
   final BuildContext appContext;
-  final Widget updateDialog;
+  final Widget Function(BuildContext appContext) updateDialogBuilder;
   final Widget child;
 
   const WalletExternalUpdatesHandler({
     Key? key,
     required this.appContext,
-    required this.updateDialog,
+    required this.updateDialogBuilder,
     required this.child,
   }) : super(key: key);
 
@@ -30,7 +30,7 @@ class _WalletExternalUpdatesHandlerState extends State<WalletExternalUpdatesHand
 
         if (account == null && chainId == null && _isDialogOpened) {
           _isDialogOpened = false;
-          Navigator.of(context).pop();
+          Navigator.of(widget.appContext).pop();
           return;
         }
 
@@ -39,7 +39,7 @@ class _WalletExternalUpdatesHandlerState extends State<WalletExternalUpdatesHand
           showDialog(
             context: widget.appContext,
             builder: (context) {
-              return widget.updateDialog;
+              return widget.updateDialogBuilder(widget.appContext);
             },
           );
         }

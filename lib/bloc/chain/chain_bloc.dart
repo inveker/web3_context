@@ -20,10 +20,13 @@ class ChainBloc extends Bloc<ChainEvent, ChainState> {
           ),
         ) {
     on<ChainSwitchChainEvent>(_switchChain);
-    on<ChainSwitchChainByIdEvent>(_switchChainById);
+    on<ChainSetChainByIdEvent>(_setChainById);
     on<ChainSetSwitchChainStrategyEvent>(_setSwitchChainStrategy);
   }
 
+  bool isSupportedChain(int chainId) {
+    return chains.where((chain) => chain.id == chainId).isNotEmpty;
+  }
 
   Future<void> _switchChain(ChainSwitchChainEvent event, Emitter<ChainState> emit) async {
     if(!chains.contains(event.chain)) throw Exception('ChainBloc: Unregistered chain');
@@ -36,16 +39,18 @@ class ChainBloc extends Bloc<ChainEvent, ChainState> {
     }
   }
 
-  Future<void> _switchChainById(ChainSwitchChainByIdEvent event, Emitter<ChainState> emit) async {
-    final chainIndex = chains.indexWhere((chain) => chain.id == event.chainId);
-    if(chainIndex == -1) throw Exception('ChainBloc: Unregistered chain');
-
-    add(ChainEvent.switchChain(chains[chainIndex]));
-  }
-
   Future<void> _setSwitchChainStrategy(ChainSetSwitchChainStrategyEvent event, Emitter<ChainState> emit) async {
     emit(state.copyWith(
       switchChainStrategy: event.switchChainStrategy,
+    ));
+  }
+
+  Future<void> _setChainById(ChainSetChainByIdEvent event, Emitter<ChainState> emit) async {
+    final chainIndex = chains.indexWhere((chain) => chain.id == event.chainId);
+    if(chainIndex == -1) throw Exception('ChainSetChainByIdEvent: Unsupported chain');
+
+    emit(state.copyWith(
+      currentChain: chains[chainIndex],
     ));
   }
 }

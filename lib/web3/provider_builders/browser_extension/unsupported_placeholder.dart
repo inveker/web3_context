@@ -19,12 +19,17 @@ class BrowserExtensionProviderBuilder implements BrowserExtensionProviderBuilder
   }
 
   @override
-  Future<CredentialsWithKnownAddress> buildCredentials() async {
+  CredentialsWithKnownAddress buildCredentials(String account) {
     throw UnimplementedError('BrowserExtensionProvider not supported');
   }
 
   @override
   CredentialsWithKnownAddress restoreCredentials(String account) {
     throw UnimplementedError('BrowserExtensionProvider not supported');
+  }
+
+  @override
+  Future<CredentialsWithKnownAddress> connect() {
+    throw UnimplementedError();
   }
 }

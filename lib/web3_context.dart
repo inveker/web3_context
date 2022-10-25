@@ -15,14 +15,14 @@ import 'package:web3_context/widgets/web3_context_providers.dart';
 class Web3Context extends StatelessWidget {
   final BuildContext appContext;
   final List<ChainModel> chains;
-  final Widget updateDialog;
+  final Widget Function(BuildContext appContext) updateDialogBuilder;
   final Widget child;
 
   const Web3Context({
     Key? key,
     required this.appContext,
     required this.chains,
-    required this.updateDialog,
+    required this.updateDialogBuilder,
     required this.child,
   }) : super(key: key);
 
@@ -35,6 +35,7 @@ class Web3Context extends StatelessWidget {
           //ChainBlocListeners
           ChainBlocListeners.currentChainChanged(),
           //WalletConnectionBlocListeners
+          WalletConnectionBlocListeners.walletConnect(),
           WalletConnectionBlocListeners.logout(),
           //RpcBlocListeners
           RpcBlocListeners.rpcServiceChanged(),
@@ -52,7 +53,7 @@ class Web3Context extends StatelessWidget {
         ],
         child: WalletExternalUpdatesHandler(
           appContext: appContext,
-          updateDialog: updateDialog,
+          updateDialogBuilder: updateDialogBuilder,
           child: child,
         ),
       ),

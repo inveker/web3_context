@@ -23,6 +23,7 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
     on<WalletConnectProviderResetEvent>(_reset);
     on<WalletConnectProviderSetDisplayUriEvent>(_setDisplayUri);
     on<WalletConnectProviderUpdateSessionEvent>(_updateSession);
+    on<WalletConnectProviderUpdateCredentialsEvent>(_updateCredentials);
 
     _walletConnectProvider!.sessionUpdateStream.listen((sessionUpdate) {
       add(WalletConnectProviderEvent.updateSession(sessionUpdate));
@@ -58,6 +59,12 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
   Future<void> _updateSession(WalletConnectProviderUpdateSessionEvent event, Emitter<WalletConnectProviderState> emit) async {
     emit(state.copyWith(
       sessionUpdate: event.sessionUpdate,
+    ));
+  }
+
+  Future<void> _updateCredentials(WalletConnectProviderUpdateCredentialsEvent event, Emitter<WalletConnectProviderState> emit) async {
+    emit(state.copyWith(
+      credentials: _walletConnectProvider!.buildCredentials(event.account),
     ));
   }
 

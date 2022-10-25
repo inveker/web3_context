@@ -7,4 +7,8 @@ class WalletExternalUpdatesEvent with _$WalletExternalUpdatesEvent {
   factory WalletExternalUpdatesEvent.chain(int? chainId) = WalletExternalUpdatesChainEvent;
 
   factory WalletExternalUpdatesEvent.reset() = WalletExternalUpdatesResetEvent;
+
+  factory WalletExternalUpdatesEvent.acceptAccount() = WalletExternalUpdatesAcceptAccountEvent;
+
+  factory WalletExternalUpdatesEvent.acceptChain() = WalletExternalUpdatesAcceptChainEvent;
 }

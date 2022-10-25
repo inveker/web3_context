@@ -22,6 +22,7 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
     on<BrowserExtensionProviderConnectEvent>(_connect);
     on<BrowserExtensionProviderRestoreEvent>(_restore);
     on<BrowserExtensionProviderResetEvent>(_reset);
+    on<BrowserExtensionProviderUpdateCredentialsEvent>(_updateCredentials);
   }
 
   Future<void> _connect(BrowserExtensionProviderConnectEvent event, Emitter<BrowserExtensionProviderState> emit) async {
@@ -31,7 +32,7 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
     emit(state.copyWith(
       isConnected: true,
       rpcService: _browserExtensionProvider.buildRpcService(),
-      credentials: await _browserExtensionProvider.buildCredentials(),
+      credentials: await _browserExtensionProvider.connect(),
     ));
   }
 
@@ -57,6 +58,12 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
     emit(BrowserExtensionProviderState(
       isSupported: state.isSupported,
       isInstalled: state.isInstalled,
+    ));
+  }
+
+  Future<void> _updateCredentials(BrowserExtensionProviderUpdateCredentialsEvent event, Emitter<BrowserExtensionProviderState> emit) async {
+    emit(state.copyWith(
+      credentials: _browserExtensionProvider.buildCredentials(event.account),
     ));
   }
 

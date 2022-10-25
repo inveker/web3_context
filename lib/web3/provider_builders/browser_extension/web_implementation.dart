@@ -28,11 +28,16 @@ class BrowserExtensionProviderBuilder implements BrowserExtensionProviderBuilder
   }
 
   @override
-  Future<CredentialsWithKnownAddress> buildCredentials() async {
+  Future<CredentialsWithKnownAddress> connect() async {
     final accounts = await _web3ethereum.connect();
+    return buildCredentials(accounts.first);
+  }
+
+  @override
+  CredentialsWithKnownAddress buildCredentials(String account) {
     return Web3EthereumCredentials(
       _web3ethereum,
-      addressHex: accounts.first,
+      addressHex: account,
     );
   }
 
@@ -43,4 +48,5 @@ class BrowserExtensionProviderBuilder implements BrowserExtensionProviderBuilder
       addressHex: account,
     );
   }
+
 }

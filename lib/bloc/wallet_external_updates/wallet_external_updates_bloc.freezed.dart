@@ -21,6 +21,8 @@ mixin _$WalletExternalUpdatesEvent {
     required TResult Function(String? account) account,
     required TResult Function(int? chainId) chain,
     required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$WalletExternalUpdatesEvent {
     TResult? Function(String? account)? account,
     TResult? Function(int? chainId)? chain,
     TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$WalletExternalUpdatesEvent {
     TResult Function(String? account)? account,
     TResult Function(int? chainId)? chain,
     TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,10 @@ mixin _$WalletExternalUpdatesEvent {
     required TResult Function(WalletExternalUpdatesAccountEvent value) account,
     required TResult Function(WalletExternalUpdatesChainEvent value) chain,
     required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +60,9 @@ mixin _$WalletExternalUpdatesEvent {
     TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +70,9 @@ mixin _$WalletExternalUpdatesEvent {
     TResult Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +171,8 @@ class _$WalletExternalUpdatesAccountEvent
     required TResult Function(String? account) account,
     required TResult Function(int? chainId) chain,
     required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
   }) {
     return account(this.account);
   }
@@ -165,6 +183,8 @@ class _$WalletExternalUpdatesAccountEvent
     TResult? Function(String? account)? account,
     TResult? Function(int? chainId)? chain,
     TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
   }) {
     return account?.call(this.account);
   }
@@ -175,6 +195,8 @@ class _$WalletExternalUpdatesAccountEvent
     TResult Function(String? account)? account,
     TResult Function(int? chainId)? chain,
     TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
     required TResult orElse(),
   }) {
     if (account != null) {
@@ -189,6 +211,10 @@ class _$WalletExternalUpdatesAccountEvent
     required TResult Function(WalletExternalUpdatesAccountEvent value) account,
     required TResult Function(WalletExternalUpdatesChainEvent value) chain,
     required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
   }) {
     return account(this);
   }
@@ -199,6 +225,9 @@ class _$WalletExternalUpdatesAccountEvent
     TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
   }) {
     return account?.call(this);
   }
@@ -209,6 +238,9 @@ class _$WalletExternalUpdatesAccountEvent
     TResult Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
     required TResult orElse(),
   }) {
     if (account != null) {
@@ -302,6 +334,8 @@ class _$WalletExternalUpdatesChainEvent
     required TResult Function(String? account) account,
     required TResult Function(int? chainId) chain,
     required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
   }) {
     return chain(chainId);
   }
@@ -312,6 +346,8 @@ class _$WalletExternalUpdatesChainEvent
     TResult? Function(String? account)? account,
     TResult? Function(int? chainId)? chain,
     TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
   }) {
     return chain?.call(chainId);
   }
@@ -322,6 +358,8 @@ class _$WalletExternalUpdatesChainEvent
     TResult Function(String? account)? account,
     TResult Function(int? chainId)? chain,
     TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
     required TResult orElse(),
   }) {
     if (chain != null) {
@@ -336,6 +374,10 @@ class _$WalletExternalUpdatesChainEvent
     required TResult Function(WalletExternalUpdatesAccountEvent value) account,
     required TResult Function(WalletExternalUpdatesChainEvent value) chain,
     required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
   }) {
     return chain(this);
   }
@@ -346,6 +388,9 @@ class _$WalletExternalUpdatesChainEvent
     TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
   }) {
     return chain?.call(this);
   }
@@ -356,6 +401,9 @@ class _$WalletExternalUpdatesChainEvent
     TResult Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
     required TResult orElse(),
   }) {
     if (chain != null) {
@@ -422,6 +470,8 @@ class _$WalletExternalUpdatesResetEvent
     required TResult Function(String? account) account,
     required TResult Function(int? chainId) chain,
     required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
   }) {
     return reset();
   }
@@ -432,6 +482,8 @@ class _$WalletExternalUpdatesResetEvent
     TResult? Function(String? account)? account,
     TResult? Function(int? chainId)? chain,
     TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
   }) {
     return reset?.call();
   }
@@ -442,6 +494,8 @@ class _$WalletExternalUpdatesResetEvent
     TResult Function(String? account)? account,
     TResult Function(int? chainId)? chain,
     TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -456,6 +510,10 @@ class _$WalletExternalUpdatesResetEvent
     required TResult Function(WalletExternalUpdatesAccountEvent value) account,
     required TResult Function(WalletExternalUpdatesChainEvent value) chain,
     required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
   }) {
     return reset(this);
   }
@@ -466,6 +524,9 @@ class _$WalletExternalUpdatesResetEvent
     TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
   }) {
     return reset?.call(this);
   }
@@ -476,6 +537,9 @@ class _$WalletExternalUpdatesResetEvent
     TResult Function(WalletExternalUpdatesAccountEvent value)? account,
     TResult Function(WalletExternalUpdatesChainEvent value)? chain,
     TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -491,9 +555,273 @@ abstract class WalletExternalUpdatesResetEvent
 }
 
 /// @nodoc
+abstract class _$$WalletExternalUpdatesAcceptAccountEventCopyWith<$Res> {
+  factory _$$WalletExternalUpdatesAcceptAccountEventCopyWith(
+          _$WalletExternalUpdatesAcceptAccountEvent value,
+          $Res Function(_$WalletExternalUpdatesAcceptAccountEvent) then) =
+      __$$WalletExternalUpdatesAcceptAccountEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$WalletExternalUpdatesAcceptAccountEventCopyWithImpl<$Res>
+    extends _$WalletExternalUpdatesEventCopyWithImpl<$Res,
+        _$WalletExternalUpdatesAcceptAccountEvent>
+    implements _$$WalletExternalUpdatesAcceptAccountEventCopyWith<$Res> {
+  __$$WalletExternalUpdatesAcceptAccountEventCopyWithImpl(
+      _$WalletExternalUpdatesAcceptAccountEvent _value,
+      $Res Function(_$WalletExternalUpdatesAcceptAccountEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$WalletExternalUpdatesAcceptAccountEvent
+    implements WalletExternalUpdatesAcceptAccountEvent {
+  _$WalletExternalUpdatesAcceptAccountEvent();
+
+  @override
+  String toString() {
+    return 'WalletExternalUpdatesEvent.acceptAccount()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletExternalUpdatesAcceptAccountEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? account) account,
+    required TResult Function(int? chainId) chain,
+    required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
+  }) {
+    return acceptAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? account)? account,
+    TResult? Function(int? chainId)? chain,
+    TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
+  }) {
+    return acceptAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? account)? account,
+    TResult Function(int? chainId)? chain,
+    TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
+    required TResult orElse(),
+  }) {
+    if (acceptAccount != null) {
+      return acceptAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WalletExternalUpdatesAccountEvent value) account,
+    required TResult Function(WalletExternalUpdatesChainEvent value) chain,
+    required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
+  }) {
+    return acceptAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
+    TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
+    TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
+  }) {
+    return acceptAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WalletExternalUpdatesAccountEvent value)? account,
+    TResult Function(WalletExternalUpdatesChainEvent value)? chain,
+    TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
+    required TResult orElse(),
+  }) {
+    if (acceptAccount != null) {
+      return acceptAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WalletExternalUpdatesAcceptAccountEvent
+    implements WalletExternalUpdatesEvent {
+  factory WalletExternalUpdatesAcceptAccountEvent() =
+      _$WalletExternalUpdatesAcceptAccountEvent;
+}
+
+/// @nodoc
+abstract class _$$WalletExternalUpdatesAcceptChainEventCopyWith<$Res> {
+  factory _$$WalletExternalUpdatesAcceptChainEventCopyWith(
+          _$WalletExternalUpdatesAcceptChainEvent value,
+          $Res Function(_$WalletExternalUpdatesAcceptChainEvent) then) =
+      __$$WalletExternalUpdatesAcceptChainEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$WalletExternalUpdatesAcceptChainEventCopyWithImpl<$Res>
+    extends _$WalletExternalUpdatesEventCopyWithImpl<$Res,
+        _$WalletExternalUpdatesAcceptChainEvent>
+    implements _$$WalletExternalUpdatesAcceptChainEventCopyWith<$Res> {
+  __$$WalletExternalUpdatesAcceptChainEventCopyWithImpl(
+      _$WalletExternalUpdatesAcceptChainEvent _value,
+      $Res Function(_$WalletExternalUpdatesAcceptChainEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$WalletExternalUpdatesAcceptChainEvent
+    implements WalletExternalUpdatesAcceptChainEvent {
+  _$WalletExternalUpdatesAcceptChainEvent();
+
+  @override
+  String toString() {
+    return 'WalletExternalUpdatesEvent.acceptChain()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletExternalUpdatesAcceptChainEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? account) account,
+    required TResult Function(int? chainId) chain,
+    required TResult Function() reset,
+    required TResult Function() acceptAccount,
+    required TResult Function() acceptChain,
+  }) {
+    return acceptChain();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? account)? account,
+    TResult? Function(int? chainId)? chain,
+    TResult? Function()? reset,
+    TResult? Function()? acceptAccount,
+    TResult? Function()? acceptChain,
+  }) {
+    return acceptChain?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? account)? account,
+    TResult Function(int? chainId)? chain,
+    TResult Function()? reset,
+    TResult Function()? acceptAccount,
+    TResult Function()? acceptChain,
+    required TResult orElse(),
+  }) {
+    if (acceptChain != null) {
+      return acceptChain();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WalletExternalUpdatesAccountEvent value) account,
+    required TResult Function(WalletExternalUpdatesChainEvent value) chain,
+    required TResult Function(WalletExternalUpdatesResetEvent value) reset,
+    required TResult Function(WalletExternalUpdatesAcceptAccountEvent value)
+        acceptAccount,
+    required TResult Function(WalletExternalUpdatesAcceptChainEvent value)
+        acceptChain,
+  }) {
+    return acceptChain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(WalletExternalUpdatesAccountEvent value)? account,
+    TResult? Function(WalletExternalUpdatesChainEvent value)? chain,
+    TResult? Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult? Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult? Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
+  }) {
+    return acceptChain?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WalletExternalUpdatesAccountEvent value)? account,
+    TResult Function(WalletExternalUpdatesChainEvent value)? chain,
+    TResult Function(WalletExternalUpdatesResetEvent value)? reset,
+    TResult Function(WalletExternalUpdatesAcceptAccountEvent value)?
+        acceptAccount,
+    TResult Function(WalletExternalUpdatesAcceptChainEvent value)? acceptChain,
+    required TResult orElse(),
+  }) {
+    if (acceptChain != null) {
+      return acceptChain(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WalletExternalUpdatesAcceptChainEvent
+    implements WalletExternalUpdatesEvent {
+  factory WalletExternalUpdatesAcceptChainEvent() =
+      _$WalletExternalUpdatesAcceptChainEvent;
+}
+
+/// @nodoc
 mixin _$WalletExternalUpdatesState {
   String? get newAccount => throw _privateConstructorUsedError;
+  String? get acceptedAccount => throw _privateConstructorUsedError;
   int? get newChainId => throw _privateConstructorUsedError;
+  int? get acceptedChainId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WalletExternalUpdatesStateCopyWith<WalletExternalUpdatesState>
@@ -507,7 +835,11 @@ abstract class $WalletExternalUpdatesStateCopyWith<$Res> {
       _$WalletExternalUpdatesStateCopyWithImpl<$Res,
           WalletExternalUpdatesState>;
   @useResult
-  $Res call({String? newAccount, int? newChainId});
+  $Res call(
+      {String? newAccount,
+      String? acceptedAccount,
+      int? newChainId,
+      int? acceptedChainId});
 }
 
 /// @nodoc
@@ -525,16 +857,26 @@ class _$WalletExternalUpdatesStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? newAccount = freezed,
+    Object? acceptedAccount = freezed,
     Object? newChainId = freezed,
+    Object? acceptedChainId = freezed,
   }) {
     return _then(_value.copyWith(
       newAccount: freezed == newAccount
           ? _value.newAccount
           : newAccount // ignore: cast_nullable_to_non_nullable
               as String?,
+      acceptedAccount: freezed == acceptedAccount
+          ? _value.acceptedAccount
+          : acceptedAccount // ignore: cast_nullable_to_non_nullable
+              as String?,
       newChainId: freezed == newChainId
           ? _value.newChainId
           : newChainId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      acceptedChainId: freezed == acceptedChainId
+          ? _value.acceptedChainId
+          : acceptedChainId // ignore: cast_nullable_to_non_nullable
               as int?,
     ) as $Val);
   }
@@ -549,7 +891,11 @@ abstract class _$$_WalletExternalUpdatesStateCopyWith<$Res>
       __$$_WalletExternalUpdatesStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? newAccount, int? newChainId});
+  $Res call(
+      {String? newAccount,
+      String? acceptedAccount,
+      int? newChainId,
+      int? acceptedChainId});
 }
 
 /// @nodoc
@@ -566,16 +912,26 @@ class __$$_WalletExternalUpdatesStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? newAccount = freezed,
+    Object? acceptedAccount = freezed,
     Object? newChainId = freezed,
+    Object? acceptedChainId = freezed,
   }) {
     return _then(_$_WalletExternalUpdatesState(
       newAccount: freezed == newAccount
           ? _value.newAccount
           : newAccount // ignore: cast_nullable_to_non_nullable
               as String?,
+      acceptedAccount: freezed == acceptedAccount
+          ? _value.acceptedAccount
+          : acceptedAccount // ignore: cast_nullable_to_non_nullable
+              as String?,
       newChainId: freezed == newChainId
           ? _value.newChainId
           : newChainId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      acceptedChainId: freezed == acceptedChainId
+          ? _value.acceptedChainId
+          : acceptedChainId // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -584,16 +940,24 @@ class __$$_WalletExternalUpdatesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_WalletExternalUpdatesState implements _WalletExternalUpdatesState {
-  _$_WalletExternalUpdatesState({this.newAccount, this.newChainId});
+  _$_WalletExternalUpdatesState(
+      {this.newAccount,
+      this.acceptedAccount,
+      this.newChainId,
+      this.acceptedChainId});
 
   @override
   final String? newAccount;
   @override
+  final String? acceptedAccount;
+  @override
   final int? newChainId;
+  @override
+  final int? acceptedChainId;
 
   @override
   String toString() {
-    return 'WalletExternalUpdatesState(newAccount: $newAccount, newChainId: $newChainId)';
+    return 'WalletExternalUpdatesState(newAccount: $newAccount, acceptedAccount: $acceptedAccount, newChainId: $newChainId, acceptedChainId: $acceptedChainId)';
   }
 
   @override
@@ -603,12 +967,17 @@ class _$_WalletExternalUpdatesState implements _WalletExternalUpdatesState {
             other is _$_WalletExternalUpdatesState &&
             (identical(other.newAccount, newAccount) ||
                 other.newAccount == newAccount) &&
+            (identical(other.acceptedAccount, acceptedAccount) ||
+                other.acceptedAccount == acceptedAccount) &&
             (identical(other.newChainId, newChainId) ||
-                other.newChainId == newChainId));
+                other.newChainId == newChainId) &&
+            (identical(other.acceptedChainId, acceptedChainId) ||
+                other.acceptedChainId == acceptedChainId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, newAccount, newChainId);
+  int get hashCode => Object.hash(
+      runtimeType, newAccount, acceptedAccount, newChainId, acceptedChainId);
 
   @JsonKey(ignore: true)
   @override
@@ -622,12 +991,18 @@ abstract class _WalletExternalUpdatesState
     implements WalletExternalUpdatesState {
   factory _WalletExternalUpdatesState(
       {final String? newAccount,
-      final int? newChainId}) = _$_WalletExternalUpdatesState;
+      final String? acceptedAccount,
+      final int? newChainId,
+      final int? acceptedChainId}) = _$_WalletExternalUpdatesState;
 
   @override
   String? get newAccount;
   @override
+  String? get acceptedAccount;
+  @override
   int? get newChainId;
+  @override
+  int? get acceptedChainId;
   @override
   @JsonKey(ignore: true)
   _$$_WalletExternalUpdatesStateCopyWith<_$_WalletExternalUpdatesState>

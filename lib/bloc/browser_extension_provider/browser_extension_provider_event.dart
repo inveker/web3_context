@@ -7,4 +7,6 @@ class BrowserExtensionProviderEvent with _$BrowserExtensionProviderEvent {
   factory BrowserExtensionProviderEvent.restore(Map<String, dynamic> json) = BrowserExtensionProviderRestoreEvent;
 
   factory BrowserExtensionProviderEvent.reset() = BrowserExtensionProviderResetEvent;
+
+  factory BrowserExtensionProviderEvent.updateCredentials(String account) = BrowserExtensionProviderUpdateCredentialsEvent;
 }
