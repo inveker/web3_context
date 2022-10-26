@@ -153,6 +153,12 @@ Private event. Set network by id
 
 ### Examples
 
+#### Get current chain
+
+```dart
+context.read<ChainBloc>().state.currentChain;
+```
+
 #### Switch chain
 
 ```dart
