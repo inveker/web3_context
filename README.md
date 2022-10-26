@@ -16,7 +16,7 @@ This widget is the root provider that exposes blocs, initializes their interacti
 final BuildContext appContext;
 ```
 BuildContext from MaterialApp, you can get him from NavigatorKey. Used to access blocs and display a modal in the application context.
-<br/>
+
 ```dart
 final List<ChainModel> chains;
 ```
