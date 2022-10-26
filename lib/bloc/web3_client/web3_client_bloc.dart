@@ -10,7 +10,13 @@ part 'web3_client_event.dart';
 part 'web3_client_state.dart';
 
 class Web3ClientBloc extends Bloc<Web3ClientEvent, Web3ClientState> {
-  Web3ClientBloc() : super(Web3ClientState()) {
+  Web3ClientBloc({
+    required RpcService rpcService,
+  }) : super(
+          Web3ClientState(
+            client: Web3Client.custom(rpcService),
+          ),
+        ) {
     on<Web3ClientSetEvent>(_set);
     on<Web3ClientCreateFromRpcEvent>(_createFromRpc);
   }

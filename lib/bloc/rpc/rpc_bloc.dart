@@ -11,14 +11,17 @@ part 'rpc_state.dart';
 
 class RpcBloc extends Bloc<RpcEvent, RpcState> {
   RpcBloc({
-    String? rpcUrl,
-  }) : super(RpcState()) {
+    required String rpcUrl,
+  }) : super(
+          RpcState(
+            rpcService: JsonRPC(
+              rpcUrl,
+              http.Client(),
+            ),
+          )
+        ) {
     on<RpcSetEvent>(_set);
     on<RpcCreateFromUrlEvent>(_createFromUrl);
-
-    if (rpcUrl != null) {
-      add(RpcEvent.createFromUrl(rpcUrl));
-    }
   }
 
   Future<void> _set(RpcSetEvent event, Emitter<RpcState> emit) async {

@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RpcEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RpcService? rpcService) set,
+    required TResult Function(RpcService rpcService) set,
     required TResult Function(String url) createFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RpcService? rpcService)? set,
+    TResult? Function(RpcService rpcService)? set,
     TResult? Function(String url)? createFromUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RpcService? rpcService)? set,
+    TResult Function(RpcService rpcService)? set,
     TResult Function(String url)? createFromUrl,
     required TResult orElse(),
   }) =>
@@ -79,7 +79,7 @@ abstract class _$$RpcSetEventCopyWith<$Res> {
           _$RpcSetEvent value, $Res Function(_$RpcSetEvent) then) =
       __$$RpcSetEventCopyWithImpl<$Res>;
   @useResult
-  $Res call({RpcService? rpcService});
+  $Res call({RpcService rpcService});
 }
 
 /// @nodoc
@@ -93,13 +93,13 @@ class __$$RpcSetEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rpcService = freezed,
+    Object? rpcService = null,
   }) {
     return _then(_$RpcSetEvent(
-      freezed == rpcService
+      null == rpcService
           ? _value.rpcService
           : rpcService // ignore: cast_nullable_to_non_nullable
-              as RpcService?,
+              as RpcService,
     ));
   }
 }
@@ -110,7 +110,7 @@ class _$RpcSetEvent implements RpcSetEvent {
   _$RpcSetEvent(this.rpcService);
 
   @override
-  final RpcService? rpcService;
+  final RpcService rpcService;
 
   @override
   String toString() {
@@ -138,7 +138,7 @@ class _$RpcSetEvent implements RpcSetEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RpcService? rpcService) set,
+    required TResult Function(RpcService rpcService) set,
     required TResult Function(String url) createFromUrl,
   }) {
     return set(rpcService);
@@ -147,7 +147,7 @@ class _$RpcSetEvent implements RpcSetEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RpcService? rpcService)? set,
+    TResult? Function(RpcService rpcService)? set,
     TResult? Function(String url)? createFromUrl,
   }) {
     return set?.call(rpcService);
@@ -156,7 +156,7 @@ class _$RpcSetEvent implements RpcSetEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RpcService? rpcService)? set,
+    TResult Function(RpcService rpcService)? set,
     TResult Function(String url)? createFromUrl,
     required TResult orElse(),
   }) {
@@ -199,9 +199,9 @@ class _$RpcSetEvent implements RpcSetEvent {
 }
 
 abstract class RpcSetEvent implements RpcEvent {
-  factory RpcSetEvent(final RpcService? rpcService) = _$RpcSetEvent;
+  factory RpcSetEvent(final RpcService rpcService) = _$RpcSetEvent;
 
-  RpcService? get rpcService;
+  RpcService get rpcService;
   @JsonKey(ignore: true)
   _$$RpcSetEventCopyWith<_$RpcSetEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -272,7 +272,7 @@ class _$RpcCreateFromUrlEvent implements RpcCreateFromUrlEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RpcService? rpcService) set,
+    required TResult Function(RpcService rpcService) set,
     required TResult Function(String url) createFromUrl,
   }) {
     return createFromUrl(url);
@@ -281,7 +281,7 @@ class _$RpcCreateFromUrlEvent implements RpcCreateFromUrlEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RpcService? rpcService)? set,
+    TResult? Function(RpcService rpcService)? set,
     TResult? Function(String url)? createFromUrl,
   }) {
     return createFromUrl?.call(url);
@@ -290,7 +290,7 @@ class _$RpcCreateFromUrlEvent implements RpcCreateFromUrlEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RpcService? rpcService)? set,
+    TResult Function(RpcService rpcService)? set,
     TResult Function(String url)? createFromUrl,
     required TResult orElse(),
   }) {
@@ -343,7 +343,7 @@ abstract class RpcCreateFromUrlEvent implements RpcEvent {
 
 /// @nodoc
 mixin _$RpcState {
-  RpcService? get rpcService => throw _privateConstructorUsedError;
+  RpcService get rpcService => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RpcStateCopyWith<RpcState> get copyWith =>
@@ -355,7 +355,7 @@ abstract class $RpcStateCopyWith<$Res> {
   factory $RpcStateCopyWith(RpcState value, $Res Function(RpcState) then) =
       _$RpcStateCopyWithImpl<$Res, RpcState>;
   @useResult
-  $Res call({RpcService? rpcService});
+  $Res call({RpcService rpcService});
 }
 
 /// @nodoc
@@ -371,13 +371,13 @@ class _$RpcStateCopyWithImpl<$Res, $Val extends RpcState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rpcService = freezed,
+    Object? rpcService = null,
   }) {
     return _then(_value.copyWith(
-      rpcService: freezed == rpcService
+      rpcService: null == rpcService
           ? _value.rpcService
           : rpcService // ignore: cast_nullable_to_non_nullable
-              as RpcService?,
+              as RpcService,
     ) as $Val);
   }
 }
@@ -389,7 +389,7 @@ abstract class _$$_RpcStateCopyWith<$Res> implements $RpcStateCopyWith<$Res> {
       __$$_RpcStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RpcService? rpcService});
+  $Res call({RpcService rpcService});
 }
 
 /// @nodoc
@@ -403,13 +403,13 @@ class __$$_RpcStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rpcService = freezed,
+    Object? rpcService = null,
   }) {
     return _then(_$_RpcState(
-      rpcService: freezed == rpcService
+      rpcService: null == rpcService
           ? _value.rpcService
           : rpcService // ignore: cast_nullable_to_non_nullable
-              as RpcService?,
+              as RpcService,
     ));
   }
 }
@@ -417,10 +417,10 @@ class __$$_RpcStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RpcState implements _RpcState {
-  _$_RpcState({this.rpcService});
+  _$_RpcState({required this.rpcService});
 
   @override
-  final RpcService? rpcService;
+  final RpcService rpcService;
 
   @override
   String toString() {
@@ -447,10 +447,10 @@ class _$_RpcState implements _RpcState {
 }
 
 abstract class _RpcState implements RpcState {
-  factory _RpcState({final RpcService? rpcService}) = _$_RpcState;
+  factory _RpcState({required final RpcService rpcService}) = _$_RpcState;
 
   @override
-  RpcService? get rpcService;
+  RpcService get rpcService;
   @override
   @JsonKey(ignore: true)
   _$$_RpcStateCopyWith<_$_RpcState> get copyWith =>

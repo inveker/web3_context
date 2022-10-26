@@ -33,7 +33,7 @@ class BrowserExtensionProviderBlocListeners {
       listenWhen: (p, n) => p.rpcService != n.rpcService && n.rpcService != null,
       listener: (context, state) {
         final rpcBloc = context.read<RpcBloc>();
-        rpcBloc.add(RpcEvent.set(state.rpcService));
+        rpcBloc.add(RpcEvent.set(state.rpcService!));
       },
     );
   }

@@ -9,11 +9,7 @@ class RpcBlocListeners {
       listener: (context, state) {
         final web3ClientBloc = context.read<Web3ClientBloc>();
         final rpcService = state.rpcService;
-        if (rpcService != null) {
-          web3ClientBloc.add(Web3ClientEvent.createFromRpc(rpcService));
-        } else {
-          web3ClientBloc.add(Web3ClientEvent.set(null));
-        }
+        web3ClientBloc.add(Web3ClientEvent.createFromRpc(rpcService));
       },
     );
   }

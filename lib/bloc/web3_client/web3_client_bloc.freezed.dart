@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Web3ClientEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Web3Client? client) set,
+    required TResult Function(Web3Client client) set,
     required TResult Function(RpcService rpc) createFromRpc,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Web3Client? client)? set,
+    TResult? Function(Web3Client client)? set,
     TResult? Function(RpcService rpc)? createFromRpc,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Web3Client? client)? set,
+    TResult Function(Web3Client client)? set,
     TResult Function(RpcService rpc)? createFromRpc,
     required TResult orElse(),
   }) =>
@@ -80,7 +80,7 @@ abstract class _$$Web3ClientSetEventCopyWith<$Res> {
           $Res Function(_$Web3ClientSetEvent) then) =
       __$$Web3ClientSetEventCopyWithImpl<$Res>;
   @useResult
-  $Res call({Web3Client? client});
+  $Res call({Web3Client client});
 }
 
 /// @nodoc
@@ -94,13 +94,13 @@ class __$$Web3ClientSetEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? client = freezed,
+    Object? client = null,
   }) {
     return _then(_$Web3ClientSetEvent(
-      freezed == client
+      null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
-              as Web3Client?,
+              as Web3Client,
     ));
   }
 }
@@ -111,7 +111,7 @@ class _$Web3ClientSetEvent implements Web3ClientSetEvent {
   _$Web3ClientSetEvent(this.client);
 
   @override
-  final Web3Client? client;
+  final Web3Client client;
 
   @override
   String toString() {
@@ -139,7 +139,7 @@ class _$Web3ClientSetEvent implements Web3ClientSetEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Web3Client? client) set,
+    required TResult Function(Web3Client client) set,
     required TResult Function(RpcService rpc) createFromRpc,
   }) {
     return set(client);
@@ -148,7 +148,7 @@ class _$Web3ClientSetEvent implements Web3ClientSetEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Web3Client? client)? set,
+    TResult? Function(Web3Client client)? set,
     TResult? Function(RpcService rpc)? createFromRpc,
   }) {
     return set?.call(client);
@@ -157,7 +157,7 @@ class _$Web3ClientSetEvent implements Web3ClientSetEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Web3Client? client)? set,
+    TResult Function(Web3Client client)? set,
     TResult Function(RpcService rpc)? createFromRpc,
     required TResult orElse(),
   }) {
@@ -200,9 +200,9 @@ class _$Web3ClientSetEvent implements Web3ClientSetEvent {
 }
 
 abstract class Web3ClientSetEvent implements Web3ClientEvent {
-  factory Web3ClientSetEvent(final Web3Client? client) = _$Web3ClientSetEvent;
+  factory Web3ClientSetEvent(final Web3Client client) = _$Web3ClientSetEvent;
 
-  Web3Client? get client;
+  Web3Client get client;
   @JsonKey(ignore: true)
   _$$Web3ClientSetEventCopyWith<_$Web3ClientSetEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -275,7 +275,7 @@ class _$Web3ClientCreateFromRpcEvent implements Web3ClientCreateFromRpcEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Web3Client? client) set,
+    required TResult Function(Web3Client client) set,
     required TResult Function(RpcService rpc) createFromRpc,
   }) {
     return createFromRpc(rpc);
@@ -284,7 +284,7 @@ class _$Web3ClientCreateFromRpcEvent implements Web3ClientCreateFromRpcEvent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Web3Client? client)? set,
+    TResult? Function(Web3Client client)? set,
     TResult? Function(RpcService rpc)? createFromRpc,
   }) {
     return createFromRpc?.call(rpc);
@@ -293,7 +293,7 @@ class _$Web3ClientCreateFromRpcEvent implements Web3ClientCreateFromRpcEvent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Web3Client? client)? set,
+    TResult Function(Web3Client client)? set,
     TResult Function(RpcService rpc)? createFromRpc,
     required TResult orElse(),
   }) {
@@ -347,7 +347,7 @@ abstract class Web3ClientCreateFromRpcEvent implements Web3ClientEvent {
 
 /// @nodoc
 mixin _$Web3ClientState {
-  Web3Client? get client => throw _privateConstructorUsedError;
+  Web3Client get client => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $Web3ClientStateCopyWith<Web3ClientState> get copyWith =>
@@ -360,7 +360,7 @@ abstract class $Web3ClientStateCopyWith<$Res> {
           Web3ClientState value, $Res Function(Web3ClientState) then) =
       _$Web3ClientStateCopyWithImpl<$Res, Web3ClientState>;
   @useResult
-  $Res call({Web3Client? client});
+  $Res call({Web3Client client});
 }
 
 /// @nodoc
@@ -376,13 +376,13 @@ class _$Web3ClientStateCopyWithImpl<$Res, $Val extends Web3ClientState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? client = freezed,
+    Object? client = null,
   }) {
     return _then(_value.copyWith(
-      client: freezed == client
+      client: null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
-              as Web3Client?,
+              as Web3Client,
     ) as $Val);
   }
 }
@@ -395,7 +395,7 @@ abstract class _$$_Web3ClientStateCopyWith<$Res>
       __$$_Web3ClientStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Web3Client? client});
+  $Res call({Web3Client client});
 }
 
 /// @nodoc
@@ -409,13 +409,13 @@ class __$$_Web3ClientStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? client = freezed,
+    Object? client = null,
   }) {
     return _then(_$_Web3ClientState(
-      client: freezed == client
+      client: null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
-              as Web3Client?,
+              as Web3Client,
     ));
   }
 }
@@ -423,10 +423,10 @@ class __$$_Web3ClientStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Web3ClientState implements _Web3ClientState {
-  _$_Web3ClientState({this.client});
+  _$_Web3ClientState({required this.client});
 
   @override
-  final Web3Client? client;
+  final Web3Client client;
 
   @override
   String toString() {
@@ -452,10 +452,11 @@ class _$_Web3ClientState implements _Web3ClientState {
 }
 
 abstract class _Web3ClientState implements Web3ClientState {
-  factory _Web3ClientState({final Web3Client? client}) = _$_Web3ClientState;
+  factory _Web3ClientState({required final Web3Client client}) =
+      _$_Web3ClientState;
 
   @override
-  Web3Client? get client;
+  Web3Client get client;
   @override
   @JsonKey(ignore: true)
   _$$_Web3ClientStateCopyWith<_$_Web3ClientState> get copyWith =>

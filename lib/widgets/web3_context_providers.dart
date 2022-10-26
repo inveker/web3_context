@@ -41,7 +41,9 @@ class Web3ContextProviders extends StatelessWidget {
           ),
         ),
         BlocProvider<Web3ClientBloc>(
-          create: (context) => Web3ClientBloc(),
+          create: (context) => Web3ClientBloc(
+            rpcService: context.read<RpcBloc>().state.rpcService,
+          ),
         ),
         BlocProvider<CredentialsBloc>(
           create: (context) => CredentialsBloc(),
