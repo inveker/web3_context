@@ -12,15 +12,28 @@ This widget is the root provider that exposes blocs, initializes their interacti
 
 ### Params
 
-[appContext] BuildContext - BuildContext from MaterialApp, you can get him from NavigatorKey. Used to access blocs and display a modal in the application context.
+```dart
+final BuildContext appContext;
+```
+BuildContext from MaterialApp, you can get him from NavigatorKey. Used to access blocs and display a modal in the application context.
+<br/>
+```dart
+final List<ChainModel> chains;
+```
+List of networks supported by the application.
 
-[chains] List<ChainModel> - List of networks supported by the application.
+```dart
+final Widget Function(BuildContext appContext) updateDialogBuilder;
+```
+A function that should return a widget used as a modal window, which is called when the user has changed the account or network in his wallet
 
-[updateDialogBuilder] Widget Function(BuildContext appContext) - A function that should return a widget used as a modal window, which is called when the user has changed the account or network in his wallet
-
-[child] Widget - Any widget, usually a MaterialApp
+```dart
+final Widget child;
+```
+Any widget, usually a MaterialApp
 
 ### Example
+
 Wrap you MaterialApp(or other) widget to Web3Context
 
 ```dart
@@ -59,13 +72,22 @@ Block that monitors the user's wallet connection
 
 ### State
 
-Public [hasWalletConnection] bool - Is the user's wallet connected
+```dart
+bool hasWalletConnection;
+```
+Public field. Is the user's wallet connected
 
 ### Events
 
-Public [logout] void Function() - Disconnects from the connection to the wallet
+```dart
+void Function() logout;
+```
+Public event. Disconnects from the connection to the wallet
 
-Private [walletConnected] void Function() - Sets hasWalletConnection to true when one of the providers connects
+```dart
+void Function() walletConnected;
+```
+Private event. Sets hasWalletConnection to true when one of the providers connects
 
 ### Examples
 
@@ -85,3 +107,66 @@ BlocListener<WalletConnectionBloc, WalletConnectionState>(
   },
 )
 ```
+
+## ChainBloc
+
+### Description
+
+Responsible for managing the selected network
+
+### Params
+
+```dart
+final List<ChainModel> chains;
+```
+Public field. List of networks supported by the application.
+
+### State
+
+```dart
+ChainModel currentChain;
+```
+Public field. The current network on which the application is running
+
+```dart
+SwitchChainStrategy? switchChainStrategy;
+```
+Private field. Strategy defining behavior during network switching
+
+### Events
+
+```dart
+void Function(ChainModel chain) switchChain;
+```
+Public event. Switch to network. 
+
+```dart
+void Function(SwitchChainStrategy? switchChainStrategy) setSwitchChainStrategy;
+```
+Private event. Setting a strategy for switch network 
+
+
+```dart
+void Function(int chainId) setChainById;
+```
+Private event. Set network by id
+
+### Examples
+
+#### Switch chain
+
+```dart
+context.read<ChainBloc>().add(ChainEvent.switchChain(chain));
+```
+
+#### Listen current chain changed
+
+```dart
+BlocListener<ChainBloc, ChainState>(
+  listenWhen: (p, n) => p.currentChain != n.currentChain,
+  listener: (context, state) {
+    ...
+  },
+)
+```
+
