@@ -156,7 +156,7 @@ Private event. Set network by id
 #### Get current chain
 
 ```dart
-context.read<ChainBloc>().state.currentChain;
+final ChainModel currentChain = context.read<ChainBloc>().state.currentChain;
 ```
 
 #### Switch chain
@@ -215,7 +215,7 @@ Private event. Create rpcService from url, and set this to state.
 #### Get rpcService 
 
 ```dart
-final rpcService = context.read<RpcBloc>().state.rpcService;
+final RpcService rpcService = context.read<RpcBloc>().state.rpcService;
 ```
 
 #### Listen rpcService changed
