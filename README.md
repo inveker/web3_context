@@ -170,3 +170,55 @@ BlocListener<ChainBloc, ChainState>(
 )
 ```
 
+## RpcBloc
+
+### Description
+
+Is the provider of the RpcService object
+
+### Params
+
+```dart
+final String rpcUrl;
+```
+
+initial rpc service url 
+
+### State
+
+```dart
+RpcService rpcService;
+```
+RpcService connected to the current network
+
+### Events
+
+```dart
+void Function(RpcService rpcService) set;
+```
+Private event. Set new rpcService
+
+```dart
+void Function(String url) createFromUrl;
+```
+Private event. Create rpcService from url, and set this to state. 
+
+
+### Examples
+
+#### Get rpcService 
+
+```dart
+final rpcService = context.read<RpcBloc>().state.rpcService;
+```
+
+#### Listen rpcService changed
+
+```dart
+BlocListener<RpcService, RpcState>(
+  listenWhen: (p, n) => p.rpcService != n.rpcService,
+  listener: (context, state) {
+    ...
+  },
+)
+```
