@@ -8,7 +8,6 @@ import 'package:web3_context/widgets/listeners/chain_bloc_listeners.dart';
 import 'package:web3_context/widgets/listeners/wallet_connection_bloc_listeners.dart';
 import 'package:web3_context/widgets/listeners/rpc_bloc_listeners.dart';
 import 'package:web3_context/widgets/listeners/walletconnect_provider_bloc_listeners.dart';
-import 'package:web3_context/widgets/listeners/web3_client_bloc_listeners.dart';
 import 'package:web3_context/widgets/wallet_external_updates_handler.dart';
 import 'package:web3_context/widgets/web3_context_providers.dart';
 
@@ -39,8 +38,6 @@ class Web3Context extends StatelessWidget {
           WalletConnectionBlocListeners.logout(),
           //RpcBlocListeners
           RpcBlocListeners.rpcServiceChanged(),
-          //Web3ClientBlocListeners
-          Web3ClientBlocListeners.clientChanged(),
           //BrowserExtensionProviderBlocListeners
           BrowserExtensionProviderBlocListeners.isConnectedChanged(),
           BrowserExtensionProviderBlocListeners.rpcServiceChanged(),
