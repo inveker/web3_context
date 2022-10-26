@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:walletconnect_dart/walletconnect_dart.dart';
-import 'package:web3_context/web3/provider_builders/provider_builder.dart';
 import 'package:web3dart/json_rpc.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:web3dart_walletconnect/web3dart_walletconnect.dart';
 
-class WalletConnectProviderBuilder implements ProviderBuilder {
+class WalletConnectProviderBuilder {
   late final WalletConnect _walletConnect;
   final StreamController<WCSessionUpdateResponse> _sessionUpdateStreamController = StreamController.broadcast();
 

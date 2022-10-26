@@ -70,6 +70,7 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
   @override
   BrowserExtensionProviderState? fromJson(Map<String, dynamic> json) {
     Future(() => add(BrowserExtensionProviderEvent.restore(json)));
+    return null;
   }
 
   @override
