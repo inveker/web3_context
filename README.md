@@ -153,6 +153,12 @@ Private event. Set network by id
 
 ### Examples
 
+#### Get supported chains
+
+```dart
+final List<ChainModel> supportedChains = context.read<ChainBloc>().chains;
+```
+
 #### Get current chain
 
 ```dart
@@ -187,7 +193,6 @@ Is the provider of the RpcService object
 ```dart
 final String rpcUrl;
 ```
-
 initial rpc service url 
 
 ### State
@@ -209,7 +214,6 @@ void Function(String url) createFromUrl;
 ```
 Private event. Create rpcService from url, and set this to state. 
 
-
 ### Examples
 
 #### Get rpcService 
@@ -223,6 +227,53 @@ final RpcService rpcService = context.read<RpcBloc>().state.rpcService;
 ```dart
 BlocListener<RpcService, RpcState>(
   listenWhen: (p, n) => p.rpcService != n.rpcService,
+  listener: (context, state) {
+    ...
+  },
+)
+```
+
+## Web3ClientBloc
+
+### Params
+
+```dart
+final RpcService rpcService;
+```
+initial rpc service 
+
+### State
+
+```dart
+Web3Client client;
+```
+Web3Client object connected to the current RpcService
+
+### Events
+
+```dart
+void Function(Web3Client client) set;
+```
+Private event. Set new Web3Client
+
+```dart
+void Function(RpcService rpc) createFromRpc;
+```
+Private event. Create Web3Client from RpcService, and set this to state.
+
+### Examples
+
+#### Get Web3Client
+
+```dart
+final Web3Client web3Client = context.read<Web3ClientBloc>().state.client;
+```
+
+#### Listen client changed
+
+```dart
+BlocListener<Web3ClientBloc, Web3ClientState>(
+  listenWhen: (p, n) => p.client != n.client,
   listener: (context, state) {
     ...
   },
