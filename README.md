@@ -235,6 +235,10 @@ BlocListener<RpcService, RpcState>(
 
 ## Web3ClientBloc
 
+### Description
+
+Is the provider of the Web3Client object
+
 ### Params
 
 ```dart
@@ -274,6 +278,45 @@ final Web3Client web3Client = context.read<Web3ClientBloc>().state.client;
 ```dart
 BlocListener<Web3ClientBloc, Web3ClientState>(
   listenWhen: (p, n) => p.client != n.client,
+  listener: (context, state) {
+    ...
+  },
+)
+```
+
+## CredentialsBloc
+
+### Description
+
+Is the provider of the CredentialsWithKnownAddress object
+
+### State
+
+```dart
+CredentialsWithKnownAddress? credentials;
+```
+If there is a connection to the user's wallet, it stores an object with which you can sign transactions
+
+### Events
+
+```dart
+void Function(CredentialsWithKnownAddress? credentials) set;
+```
+Private event. Set new CredentialsWithKnownAddress or dispose it
+
+### Examples
+
+#### Get Credentials
+
+```dart
+final CredentialsWithKnownAddress credentials = context.read<CredentialsBloc>().state.credentials;
+```
+
+#### Listen credentials changed
+
+```dart
+BlocListener<CredentialsBloc, CredentialsState>(
+  listenWhen: (p, n) => p.credentials != n.credentials,
   listener: (context, state) {
     ...
   },
