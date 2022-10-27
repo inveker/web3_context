@@ -200,7 +200,7 @@ initial rpc service url
 ```dart
 RpcService rpcService;
 ```
-RpcService connected to the current network
+Public field. RpcService connected to the current network
 
 ### Events
 
@@ -251,7 +251,7 @@ initial rpc service
 ```dart
 Web3Client client;
 ```
-Web3Client object connected to the current RpcService
+Public field. Web3Client object connected to the current RpcService
 
 ### Events
 
@@ -295,7 +295,7 @@ Is the provider of the CredentialsWithKnownAddress object
 ```dart
 CredentialsWithKnownAddress? credentials;
 ```
-If there is a connection to the user's wallet, it stores an object with which you can sign transactions
+Public field. If there is a connection to the user's wallet, it stores an object with which you can sign transactions
 
 ### Events
 
@@ -317,6 +317,111 @@ final CredentialsWithKnownAddress credentials = context.read<CredentialsBloc>().
 ```dart
 BlocListener<CredentialsBloc, CredentialsState>(
   listenWhen: (p, n) => p.credentials != n.credentials,
+  listener: (context, state) {
+    ...
+  },
+)
+```
+
+## WalletExternalUpdatesBloc
+
+### Description
+
+An bloc that listens for external changes (change of address or network) in the user's wallet
+
+### State
+
+```dart
+String? newAccount;
+```
+Public field. Address set in the wallet
+
+```dart
+int? newChainId;
+```
+Public field. Chain id set in the wallet
+
+```dart
+String? acceptedAccount;
+```
+Private field. User accepted address to update application data
+
+```dart
+int? acceptedChainId;
+```
+Private field. User accepted chain id to update application data
+
+
+### Events
+
+```dart
+void Function() acceptAccount;
+```
+Public event. Accept new account
+
+```dart
+void Function() acceptChain;
+```
+Public event. Accept new chain
+
+```dart
+void Function(String? account) account;
+```
+Private event. Set new account pending confirmation
+
+```dart
+void Function(int? chainId) chain;
+```
+Private event. Set new chain id pending confirmation
+
+```dart
+void Function() reset;
+```
+Private event. Reset bloc state
+
+
+### Examples
+
+#### Get new account
+
+```dart
+final String? newAccount = context.read<WalletExternalUpdatesBloc>().state.newAccount;
+```
+
+#### Get new chainId
+
+```dart
+final int? newChainId = context.read<WalletExternalUpdatesBloc>().state.newChainId;
+```
+
+#### Accept new account
+
+```dart
+context.read<WalletExternalUpdatesBloc>().add(WalletExternalUpdatesEvent.acceptAccount());
+```
+
+#### Accept new chain
+
+```dart
+context.read<WalletExternalUpdatesBloc>().add(WalletExternalUpdatesEvent.acceptChain());
+```
+
+#### Listen new account changed
+
+```dart
+BlocListener<WalletExternalUpdatesBloc, WalletExternalUpdatesState>(
+  listenWhen: (p, n) => p.newAccount != n.newAccount,
+  listener: (context, state) {
+    ...
+  },
+)
+```
+
+#### Listen new chainId changed
+
+```dart
+BlocListener<WalletExternalUpdatesBloc, WalletExternalUpdatesState>(
+  listenWhen: (p, n) => p.newChainId != n.newChainId,
   listener: (context, state) {
     ...
   },
