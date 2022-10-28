@@ -427,3 +427,80 @@ BlocListener<WalletExternalUpdatesBloc, WalletExternalUpdatesState>(
   },
 )
 ```
+
+## BrowserExtensionProviderBloc
+
+### Description
+
+Used to connect to browser wallets, web only
+
+### State
+
+```dart
+bool isSupported;
+```
+Public field. Is this type of connection supported?
+
+```dart
+bool isInstalled;
+```
+Public field. Is the wallet extension installed in the browser?
+
+```dart
+bool isConnected;
+```
+Private field. Is the connection connected. Use WalletConnectionBloc.state.isConnected instead
+
+```dart
+RpcService? rpcService;
+```
+Private field. RpcService connected to the user's wallet. Use RpcBloc.state.rpcService instead
+
+```dart
+CredentialsWithKnownAddress? credentials;
+```
+Private field. CredentialsWithKnownAddress connected to the user's wallet. Use CredentialsBloc.state.credentials instead
+
+### Events
+
+```dart
+void Function() connect;
+```
+Public event. Initiates a connection to the browser wallet
+
+```dart
+void Function(Map<String, dynamic> json) restore;
+```
+Private event. Restores bloc state from serialized json
+
+```dart
+void Function() reset;
+```
+Private event. Reset bloc state to initial values
+ 
+```dart
+void Function(String account) updateCredentials;
+```
+Private event. Updates the credentials object
+
+### Examples
+
+#### Connect
+
+```dart
+final walletConnectionBloc = context.read<WalletConnectionBloc>();
+
+if(!walletConnectionBloc.state.isConnected) {
+    final browserExtensionProviderBloc = context.read<BrowserExtensionProviderBloc>();
+    final isSupported = browserExtensionProviderBloc.state.isSupported;
+    final isInstalled = browserExtensionProviderBloc.state.isInstalled;
+    
+    if(isSupported && isInstalled) {
+      browserExtensionProviderBloc.add(BrowserExtensionProviderEvent.connect());
+    }
+}
+```
+
+
+ 
+
