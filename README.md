@@ -501,6 +501,76 @@ if(!walletConnectionBloc.state.isConnected) {
 }
 ```
 
+## WalletConnectProviderBloc
 
- 
+### Description
 
+Used to connect to external wallets
+
+### State
+
+```dart
+String? displayUri;
+```
+Public field. If the session is initialized, here is the url string to connect to. Can be used as a deep link or qr code
+
+```dart
+bool isConnected;
+```
+Private field. Is the connection connected. Use WalletConnectionBloc.state.isConnected instead
+
+```dart
+RpcService? rpcService;
+```
+Private field. RpcService connected to the user's wallet. Use RpcBloc.state.rpcService instead
+
+```dart
+CredentialsWithKnownAddress? credentials;
+```
+Private field. CredentialsWithKnownAddress connected to the user's wallet. Use CredentialsBloc.state.credentials instead
+
+```dart
+WCSessionUpdateResponse? sessionUpdate;
+```
+Private field. Session update object
+
+### Events
+
+```dart
+void Function() connect;
+```
+Public event. Initiates a connection to the external wallet
+
+```dart
+void Function(Map<String, dynamic> json) restore;
+```
+Private event. Restores bloc state from serialized json
+
+```dart
+void Function() reset;
+```
+Private event. Reset bloc state to initial values
+
+```dart
+void Function(String account) updateCredentials;
+```
+Private event. Updates the credentials object
+
+```dart
+void Function(String? displayUri) setDisplayUri;
+```
+Private event. Sets the string to connect to the wallet
+
+```dart
+void Function(WCSessionUpdateResponse sessionUpdate) updateSession;
+```
+Private event. Fires when the data in the wallet is updated
+
+### Examples
+
+#### Connect
+
+```dart
+final walletConnectProviderBloc = context.read<WalletConnectProviderBloc>();
+walletConnectProviderBloc.add(WalletConnectProviderEvent.connect());
+```
