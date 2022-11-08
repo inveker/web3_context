@@ -72,8 +72,6 @@ class WalletConnectProviderBlocListeners {
           if (sessionUpdate.accounts.isNotEmpty) {
             final newAccount = sessionUpdate.accounts.first;
             final currentAccount = credentialsBloc.state.credentials?.address.hexEip55;
-            print('newAccount $newAccount');
-            print('currentAccount $currentAccount');
             walletExternalUpdatesBloc.add(
               WalletExternalUpdatesEvent.account(
                 newAccount != currentAccount ? newAccount : null,

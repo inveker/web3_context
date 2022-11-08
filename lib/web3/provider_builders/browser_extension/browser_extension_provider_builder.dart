@@ -17,4 +17,8 @@ abstract class BrowserExtensionProviderBuilderInterface {
   CredentialsWithKnownAddress buildCredentials(String account);
 
   CredentialsWithKnownAddress restoreCredentials(String account);
+
+  Stream<List<String>> get accountsUpdateStream;
+
+  Stream<int> get chainUpdateStream;
 }

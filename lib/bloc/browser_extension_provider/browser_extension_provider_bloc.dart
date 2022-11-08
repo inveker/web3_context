@@ -23,6 +23,16 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
     on<BrowserExtensionProviderRestoreEvent>(_restore);
     on<BrowserExtensionProviderResetEvent>(_reset);
     on<BrowserExtensionProviderUpdateCredentialsEvent>(_updateCredentials);
+    on<BrowserExtensionProviderUpdateAccountsEvent>(_updateAccounts);
+    on<BrowserExtensionProviderUpdateChainEvent>(_updateChain);
+
+    _browserExtensionProvider.accountsUpdateStream.listen((accounts) {
+      add(BrowserExtensionProviderEvent.updateAccounts(accounts));
+    });
+
+    _browserExtensionProvider.chainUpdateStream.listen((chainId) {
+      add(BrowserExtensionProviderEvent.updateChain(chainId));
+    });
   }
 
   Future<void> _connect(BrowserExtensionProviderConnectEvent event, Emitter<BrowserExtensionProviderState> emit) async {
@@ -64,6 +74,18 @@ class BrowserExtensionProviderBloc extends HydratedBloc<BrowserExtensionProvider
   Future<void> _updateCredentials(BrowserExtensionProviderUpdateCredentialsEvent event, Emitter<BrowserExtensionProviderState> emit) async {
     emit(state.copyWith(
       credentials: _browserExtensionProvider.buildCredentials(event.account),
+    ));
+  }
+
+  Future<void> _updateAccounts(BrowserExtensionProviderUpdateAccountsEvent event, Emitter<BrowserExtensionProviderState> emit) async {
+    emit(state.copyWith(
+      accountsUpdate: event.accounts,
+    ));
+  }
+
+  Future<void> _updateChain(BrowserExtensionProviderUpdateChainEvent event, Emitter<BrowserExtensionProviderState> emit) async {
+    emit(state.copyWith(
+      chainUpdate: event.chainId,
     ));
   }
 

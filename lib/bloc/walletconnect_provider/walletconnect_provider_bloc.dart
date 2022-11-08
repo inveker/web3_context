@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:web3_context/web3/provider_builders/walletconnect/walletconnect_provider_builder.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

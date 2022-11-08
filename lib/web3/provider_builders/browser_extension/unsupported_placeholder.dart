@@ -30,6 +30,12 @@ class BrowserExtensionProviderBuilder implements BrowserExtensionProviderBuilder
 
   @override
   Future<CredentialsWithKnownAddress> connect() {
-    throw UnimplementedError();
+    throw UnimplementedError('BrowserExtensionProvider not supported');
   }
+
+  @override
+  Stream<List<String>> get accountsUpdateStream => throw UnimplementedError('BrowserExtensionProvider not supported');
+
+  @override
+  Stream<int> get chainUpdateStream => throw UnimplementedError('BrowserExtensionProvider not supported');
 }

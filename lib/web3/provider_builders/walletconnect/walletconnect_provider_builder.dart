@@ -57,7 +57,6 @@ class WalletConnectProviderBuilder {
     return buildCredentials(accounts.first);
   }
 
-  @override
   CredentialsWithKnownAddress buildCredentials(
     String account,
   ) {
@@ -72,9 +71,6 @@ class WalletConnectProviderBuilder {
   }
 
   void _registryEvents() {
-    _sessionUpdateStreamController.stream.listen((event) {
-      print('ON EVENT $event');
-    });
     _walletConnect.on<WCSessionUpdateResponse>(
       'session_update',
       (payload) {

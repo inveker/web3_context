@@ -22,6 +22,8 @@ mixin _$BrowserExtensionProviderEvent {
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$BrowserExtensionProviderEvent {
     TResult? Function(Map<String, dynamic> json)? restore,
     TResult? Function()? reset,
     TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$BrowserExtensionProviderEvent {
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +57,10 @@ mixin _$BrowserExtensionProviderEvent {
     required TResult Function(
             BrowserExtensionProviderUpdateCredentialsEvent value)
         updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +70,10 @@ mixin _$BrowserExtensionProviderEvent {
     TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +83,10 @@ mixin _$BrowserExtensionProviderEvent {
     TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +160,8 @@ class _$BrowserExtensionProviderConnectEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
   }) {
     return connect();
   }
@@ -153,6 +173,8 @@ class _$BrowserExtensionProviderConnectEvent
     TResult? Function(Map<String, dynamic> json)? restore,
     TResult? Function()? reset,
     TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
   }) {
     return connect?.call();
   }
@@ -164,6 +186,8 @@ class _$BrowserExtensionProviderConnectEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -183,6 +207,10 @@ class _$BrowserExtensionProviderConnectEvent
     required TResult Function(
             BrowserExtensionProviderUpdateCredentialsEvent value)
         updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
   }) {
     return connect(this);
   }
@@ -195,6 +223,10 @@ class _$BrowserExtensionProviderConnectEvent
     TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
   }) {
     return connect?.call(this);
   }
@@ -207,6 +239,10 @@ class _$BrowserExtensionProviderConnectEvent
     TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -302,6 +338,8 @@ class _$BrowserExtensionProviderRestoreEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
   }) {
     return restore(json);
   }
@@ -313,6 +351,8 @@ class _$BrowserExtensionProviderRestoreEvent
     TResult? Function(Map<String, dynamic> json)? restore,
     TResult? Function()? reset,
     TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
   }) {
     return restore?.call(json);
   }
@@ -324,6 +364,8 @@ class _$BrowserExtensionProviderRestoreEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
     required TResult orElse(),
   }) {
     if (restore != null) {
@@ -343,6 +385,10 @@ class _$BrowserExtensionProviderRestoreEvent
     required TResult Function(
             BrowserExtensionProviderUpdateCredentialsEvent value)
         updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
   }) {
     return restore(this);
   }
@@ -355,6 +401,10 @@ class _$BrowserExtensionProviderRestoreEvent
     TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
   }) {
     return restore?.call(this);
   }
@@ -367,6 +417,10 @@ class _$BrowserExtensionProviderRestoreEvent
     TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
     required TResult orElse(),
   }) {
     if (restore != null) {
@@ -435,6 +489,8 @@ class _$BrowserExtensionProviderResetEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
   }) {
     return reset();
   }
@@ -446,6 +502,8 @@ class _$BrowserExtensionProviderResetEvent
     TResult? Function(Map<String, dynamic> json)? restore,
     TResult? Function()? reset,
     TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
   }) {
     return reset?.call();
   }
@@ -457,6 +515,8 @@ class _$BrowserExtensionProviderResetEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -476,6 +536,10 @@ class _$BrowserExtensionProviderResetEvent
     required TResult Function(
             BrowserExtensionProviderUpdateCredentialsEvent value)
         updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
   }) {
     return reset(this);
   }
@@ -488,6 +552,10 @@ class _$BrowserExtensionProviderResetEvent
     TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
   }) {
     return reset?.call(this);
   }
@@ -500,6 +568,10 @@ class _$BrowserExtensionProviderResetEvent
     TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -592,6 +664,8 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
   }) {
     return updateCredentials(account);
   }
@@ -603,6 +677,8 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     TResult? Function(Map<String, dynamic> json)? restore,
     TResult? Function()? reset,
     TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
   }) {
     return updateCredentials?.call(account);
   }
@@ -614,6 +690,8 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
     required TResult orElse(),
   }) {
     if (updateCredentials != null) {
@@ -633,6 +711,10 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     required TResult Function(
             BrowserExtensionProviderUpdateCredentialsEvent value)
         updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
   }) {
     return updateCredentials(this);
   }
@@ -645,6 +727,10 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
   }) {
     return updateCredentials?.call(this);
   }
@@ -657,6 +743,10 @@ class _$BrowserExtensionProviderUpdateCredentialsEvent
     TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
         updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
     required TResult orElse(),
   }) {
     if (updateCredentials != null) {
@@ -679,6 +769,370 @@ abstract class BrowserExtensionProviderUpdateCredentialsEvent
 }
 
 /// @nodoc
+abstract class _$$BrowserExtensionProviderUpdateAccountsEventCopyWith<$Res> {
+  factory _$$BrowserExtensionProviderUpdateAccountsEventCopyWith(
+          _$BrowserExtensionProviderUpdateAccountsEvent value,
+          $Res Function(_$BrowserExtensionProviderUpdateAccountsEvent) then) =
+      __$$BrowserExtensionProviderUpdateAccountsEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String> accounts});
+}
+
+/// @nodoc
+class __$$BrowserExtensionProviderUpdateAccountsEventCopyWithImpl<$Res>
+    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res,
+        _$BrowserExtensionProviderUpdateAccountsEvent>
+    implements _$$BrowserExtensionProviderUpdateAccountsEventCopyWith<$Res> {
+  __$$BrowserExtensionProviderUpdateAccountsEventCopyWithImpl(
+      _$BrowserExtensionProviderUpdateAccountsEvent _value,
+      $Res Function(_$BrowserExtensionProviderUpdateAccountsEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? accounts = null,
+  }) {
+    return _then(_$BrowserExtensionProviderUpdateAccountsEvent(
+      null == accounts
+          ? _value._accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BrowserExtensionProviderUpdateAccountsEvent
+    implements BrowserExtensionProviderUpdateAccountsEvent {
+  _$BrowserExtensionProviderUpdateAccountsEvent(final List<String> accounts)
+      : _accounts = accounts;
+
+  final List<String> _accounts;
+  @override
+  List<String> get accounts {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_accounts);
+  }
+
+  @override
+  String toString() {
+    return 'BrowserExtensionProviderEvent.updateAccounts(accounts: $accounts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrowserExtensionProviderUpdateAccountsEvent &&
+            const DeepCollectionEquality().equals(other._accounts, _accounts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_accounts));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BrowserExtensionProviderUpdateAccountsEventCopyWith<
+          _$BrowserExtensionProviderUpdateAccountsEvent>
+      get copyWith =>
+          __$$BrowserExtensionProviderUpdateAccountsEventCopyWithImpl<
+              _$BrowserExtensionProviderUpdateAccountsEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+    required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
+  }) {
+    return updateAccounts(accounts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connect,
+    TResult? Function(Map<String, dynamic> json)? restore,
+    TResult? Function()? reset,
+    TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
+  }) {
+    return updateAccounts?.call(accounts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
+    required TResult orElse(),
+  }) {
+    if (updateAccounts != null) {
+      return updateAccounts(accounts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BrowserExtensionProviderConnectEvent value)
+        connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
+    required TResult Function(
+            BrowserExtensionProviderUpdateCredentialsEvent value)
+        updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
+  }) {
+    return updateAccounts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult? Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
+    TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
+        updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
+  }) {
+    return updateAccounts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+    TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
+        updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
+    required TResult orElse(),
+  }) {
+    if (updateAccounts != null) {
+      return updateAccounts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BrowserExtensionProviderUpdateAccountsEvent
+    implements BrowserExtensionProviderEvent {
+  factory BrowserExtensionProviderUpdateAccountsEvent(
+          final List<String> accounts) =
+      _$BrowserExtensionProviderUpdateAccountsEvent;
+
+  List<String> get accounts;
+  @JsonKey(ignore: true)
+  _$$BrowserExtensionProviderUpdateAccountsEventCopyWith<
+          _$BrowserExtensionProviderUpdateAccountsEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BrowserExtensionProviderUpdateChainEventCopyWith<$Res> {
+  factory _$$BrowserExtensionProviderUpdateChainEventCopyWith(
+          _$BrowserExtensionProviderUpdateChainEvent value,
+          $Res Function(_$BrowserExtensionProviderUpdateChainEvent) then) =
+      __$$BrowserExtensionProviderUpdateChainEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int chainId});
+}
+
+/// @nodoc
+class __$$BrowserExtensionProviderUpdateChainEventCopyWithImpl<$Res>
+    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res,
+        _$BrowserExtensionProviderUpdateChainEvent>
+    implements _$$BrowserExtensionProviderUpdateChainEventCopyWith<$Res> {
+  __$$BrowserExtensionProviderUpdateChainEventCopyWithImpl(
+      _$BrowserExtensionProviderUpdateChainEvent _value,
+      $Res Function(_$BrowserExtensionProviderUpdateChainEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chainId = null,
+  }) {
+    return _then(_$BrowserExtensionProviderUpdateChainEvent(
+      null == chainId
+          ? _value.chainId
+          : chainId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BrowserExtensionProviderUpdateChainEvent
+    implements BrowserExtensionProviderUpdateChainEvent {
+  _$BrowserExtensionProviderUpdateChainEvent(this.chainId);
+
+  @override
+  final int chainId;
+
+  @override
+  String toString() {
+    return 'BrowserExtensionProviderEvent.updateChain(chainId: $chainId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrowserExtensionProviderUpdateChainEvent &&
+            (identical(other.chainId, chainId) || other.chainId == chainId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, chainId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BrowserExtensionProviderUpdateChainEventCopyWith<
+          _$BrowserExtensionProviderUpdateChainEvent>
+      get copyWith => __$$BrowserExtensionProviderUpdateChainEventCopyWithImpl<
+          _$BrowserExtensionProviderUpdateChainEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+    required TResult Function(String account) updateCredentials,
+    required TResult Function(List<String> accounts) updateAccounts,
+    required TResult Function(int chainId) updateChain,
+  }) {
+    return updateChain(chainId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? connect,
+    TResult? Function(Map<String, dynamic> json)? restore,
+    TResult? Function()? reset,
+    TResult? Function(String account)? updateCredentials,
+    TResult? Function(List<String> accounts)? updateAccounts,
+    TResult? Function(int chainId)? updateChain,
+  }) {
+    return updateChain?.call(chainId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String account)? updateCredentials,
+    TResult Function(List<String> accounts)? updateAccounts,
+    TResult Function(int chainId)? updateChain,
+    required TResult orElse(),
+  }) {
+    if (updateChain != null) {
+      return updateChain(chainId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BrowserExtensionProviderConnectEvent value)
+        connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
+    required TResult Function(
+            BrowserExtensionProviderUpdateCredentialsEvent value)
+        updateCredentials,
+    required TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)
+        updateAccounts,
+    required TResult Function(BrowserExtensionProviderUpdateChainEvent value)
+        updateChain,
+  }) {
+    return updateChain(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult? Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult? Function(BrowserExtensionProviderResetEvent value)? reset,
+    TResult? Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
+        updateCredentials,
+    TResult? Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult? Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
+  }) {
+    return updateChain?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+    TResult Function(BrowserExtensionProviderUpdateCredentialsEvent value)?
+        updateCredentials,
+    TResult Function(BrowserExtensionProviderUpdateAccountsEvent value)?
+        updateAccounts,
+    TResult Function(BrowserExtensionProviderUpdateChainEvent value)?
+        updateChain,
+    required TResult orElse(),
+  }) {
+    if (updateChain != null) {
+      return updateChain(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BrowserExtensionProviderUpdateChainEvent
+    implements BrowserExtensionProviderEvent {
+  factory BrowserExtensionProviderUpdateChainEvent(final int chainId) =
+      _$BrowserExtensionProviderUpdateChainEvent;
+
+  int get chainId;
+  @JsonKey(ignore: true)
+  _$$BrowserExtensionProviderUpdateChainEventCopyWith<
+          _$BrowserExtensionProviderUpdateChainEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$BrowserExtensionProviderState {
   bool get isSupported => throw _privateConstructorUsedError;
   bool get isInstalled => throw _privateConstructorUsedError;
@@ -686,6 +1140,8 @@ mixin _$BrowserExtensionProviderState {
   RpcService? get rpcService => throw _privateConstructorUsedError;
   CredentialsWithKnownAddress? get credentials =>
       throw _privateConstructorUsedError;
+  List<String>? get accountsUpdate => throw _privateConstructorUsedError;
+  int? get chainUpdate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BrowserExtensionProviderStateCopyWith<BrowserExtensionProviderState>
@@ -705,7 +1161,9 @@ abstract class $BrowserExtensionProviderStateCopyWith<$Res> {
       bool isInstalled,
       dynamic isConnected,
       RpcService? rpcService,
-      CredentialsWithKnownAddress? credentials});
+      CredentialsWithKnownAddress? credentials,
+      List<String>? accountsUpdate,
+      int? chainUpdate});
 }
 
 /// @nodoc
@@ -727,6 +1185,8 @@ class _$BrowserExtensionProviderStateCopyWithImpl<$Res,
     Object? isConnected = null,
     Object? rpcService = freezed,
     Object? credentials = freezed,
+    Object? accountsUpdate = freezed,
+    Object? chainUpdate = freezed,
   }) {
     return _then(_value.copyWith(
       isSupported: null == isSupported
@@ -749,6 +1209,14 @@ class _$BrowserExtensionProviderStateCopyWithImpl<$Res,
           ? _value.credentials
           : credentials // ignore: cast_nullable_to_non_nullable
               as CredentialsWithKnownAddress?,
+      accountsUpdate: freezed == accountsUpdate
+          ? _value.accountsUpdate
+          : accountsUpdate // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      chainUpdate: freezed == chainUpdate
+          ? _value.chainUpdate
+          : chainUpdate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -767,7 +1235,9 @@ abstract class _$$_BrowserExtensionProviderStateCopyWith<$Res>
       bool isInstalled,
       dynamic isConnected,
       RpcService? rpcService,
-      CredentialsWithKnownAddress? credentials});
+      CredentialsWithKnownAddress? credentials,
+      List<String>? accountsUpdate,
+      int? chainUpdate});
 }
 
 /// @nodoc
@@ -788,6 +1258,8 @@ class __$$_BrowserExtensionProviderStateCopyWithImpl<$Res>
     Object? isConnected = null,
     Object? rpcService = freezed,
     Object? credentials = freezed,
+    Object? accountsUpdate = freezed,
+    Object? chainUpdate = freezed,
   }) {
     return _then(_$_BrowserExtensionProviderState(
       isSupported: null == isSupported
@@ -807,6 +1279,14 @@ class __$$_BrowserExtensionProviderStateCopyWithImpl<$Res>
           ? _value.credentials
           : credentials // ignore: cast_nullable_to_non_nullable
               as CredentialsWithKnownAddress?,
+      accountsUpdate: freezed == accountsUpdate
+          ? _value._accountsUpdate
+          : accountsUpdate // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      chainUpdate: freezed == chainUpdate
+          ? _value.chainUpdate
+          : chainUpdate // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -820,7 +1300,10 @@ class _$_BrowserExtensionProviderState
       this.isInstalled = false,
       this.isConnected = false,
       this.rpcService,
-      this.credentials});
+      this.credentials,
+      final List<String>? accountsUpdate,
+      this.chainUpdate})
+      : _accountsUpdate = accountsUpdate;
 
   @override
   @JsonKey()
@@ -835,10 +1318,21 @@ class _$_BrowserExtensionProviderState
   final RpcService? rpcService;
   @override
   final CredentialsWithKnownAddress? credentials;
+  final List<String>? _accountsUpdate;
+  @override
+  List<String>? get accountsUpdate {
+    final value = _accountsUpdate;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final int? chainUpdate;
 
   @override
   String toString() {
-    return 'BrowserExtensionProviderState(isSupported: $isSupported, isInstalled: $isInstalled, isConnected: $isConnected, rpcService: $rpcService, credentials: $credentials)';
+    return 'BrowserExtensionProviderState(isSupported: $isSupported, isInstalled: $isInstalled, isConnected: $isConnected, rpcService: $rpcService, credentials: $credentials, accountsUpdate: $accountsUpdate, chainUpdate: $chainUpdate)';
   }
 
   @override
@@ -855,7 +1349,11 @@ class _$_BrowserExtensionProviderState
             (identical(other.rpcService, rpcService) ||
                 other.rpcService == rpcService) &&
             (identical(other.credentials, credentials) ||
-                other.credentials == credentials));
+                other.credentials == credentials) &&
+            const DeepCollectionEquality()
+                .equals(other._accountsUpdate, _accountsUpdate) &&
+            (identical(other.chainUpdate, chainUpdate) ||
+                other.chainUpdate == chainUpdate));
   }
 
   @override
@@ -865,7 +1363,9 @@ class _$_BrowserExtensionProviderState
       isInstalled,
       const DeepCollectionEquality().hash(isConnected),
       rpcService,
-      credentials);
+      credentials,
+      const DeepCollectionEquality().hash(_accountsUpdate),
+      chainUpdate);
 
   @JsonKey(ignore: true)
   @override
@@ -878,12 +1378,13 @@ class _$_BrowserExtensionProviderState
 abstract class _BrowserExtensionProviderState
     implements BrowserExtensionProviderState {
   factory _BrowserExtensionProviderState(
-          {final bool isSupported,
-          final bool isInstalled,
-          final dynamic isConnected,
-          final RpcService? rpcService,
-          final CredentialsWithKnownAddress? credentials}) =
-      _$_BrowserExtensionProviderState;
+      {final bool isSupported,
+      final bool isInstalled,
+      final dynamic isConnected,
+      final RpcService? rpcService,
+      final CredentialsWithKnownAddress? credentials,
+      final List<String>? accountsUpdate,
+      final int? chainUpdate}) = _$_BrowserExtensionProviderState;
 
   @override
   bool get isSupported;
@@ -895,6 +1396,10 @@ abstract class _BrowserExtensionProviderState
   RpcService? get rpcService;
   @override
   CredentialsWithKnownAddress? get credentials;
+  @override
+  List<String>? get accountsUpdate;
+  @override
+  int? get chainUpdate;
   @override
   @JsonKey(ignore: true)
   _$$_BrowserExtensionProviderStateCopyWith<_$_BrowserExtensionProviderState>

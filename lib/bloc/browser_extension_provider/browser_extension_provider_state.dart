@@ -8,5 +8,7 @@ class BrowserExtensionProviderState with _$BrowserExtensionProviderState {
     @Default(false) isConnected,
     RpcService? rpcService,
     CredentialsWithKnownAddress? credentials,
+    List<String>? accountsUpdate,
+    int? chainUpdate,
 }) = _BrowserExtensionProviderState;
 }

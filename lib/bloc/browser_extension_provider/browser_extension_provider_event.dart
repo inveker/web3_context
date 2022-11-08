@@ -9,4 +9,9 @@ class BrowserExtensionProviderEvent with _$BrowserExtensionProviderEvent {
   factory BrowserExtensionProviderEvent.reset() = BrowserExtensionProviderResetEvent;
 
   factory BrowserExtensionProviderEvent.updateCredentials(String account) = BrowserExtensionProviderUpdateCredentialsEvent;
+
+  factory BrowserExtensionProviderEvent.updateAccounts(List<String> accounts) = BrowserExtensionProviderUpdateAccountsEvent;
+
+  factory BrowserExtensionProviderEvent.updateChain(int chainId) = BrowserExtensionProviderUpdateChainEvent;
+
 }
